@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Info
+{% endblock %}
+
+{% block name %}
+
+    Info
+
+{% endblock %}
+
+{% block main %} 
+
+<h1 class="mobile-view">Info</h1>
+
+<form action="/info_update" method="post">
+    
+    <div>
+        <label for="age">Age</label>
+        <input type="number" name="age" autocomplete="off">
+    </div>
+    <div>
+        <label for="height">Height (cm)</label>
+        <input type="number" name="height" autocomplete="off">
+    </div>
+    <div>
+        <label for="weight">Weight (kg)</label>
+        <input type="number" name="weight" autocomplete="off">
+    </div>
+    <div>
+        <button type="submit">Salva</button>
+    </div>
+    
+</form>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+    <h1>Registrati</h1>
+
+    <form action="/register" method="post">
+        <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" autocomplete="off">
+        </div>
+        <div>
+            <label for="age">Age</label>
+            <input type="number" name="age" autocomplete="off">
+        </div>
+        <div>
+            <label for="height">Height (cm)</label>
+            <input type="number" name="height" autocomplete="off">
+        </div>
+        <div>
+            <label for="weight">Weight (kg)</label>
+            <input type="number" name="weight" autocomplete="off">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="text" name="password" autocomplete="off">
+        </div>
+        <div>
+            <label for="confirmation">Confirm password</label>
+            <input type="text" name="confirmation" autocomplete="off">
+        </div>
+        <div>
+            <button type="submit">Registrati</button>
+        </div>
+    </form>
+
+{% endblock %}

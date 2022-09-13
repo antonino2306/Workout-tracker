@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block name %}
+    Workout Tracker
+{% endblock %}
+
+{% block main %}
+
+    <div class="container">
+        {% if p_lenght != 0 %}
+            
+            {% for program in programs%}
+                <section class="scheda">
+                    <h2>{{ program['name'] }}</h2>
+                    <div class="table four">
+                        <div>Esercizio</div>
+                        <div>Serie</div>
+                        <div>Reps</div>
+                        <div>Rest</div>
+                        {% for row in scheda %}
+                            {% if row['program'] == program['name'] %}
+                                <div>{{ row['name'] }}</div>
+                                <div>{{ row['sets'] }}</div>
+                                <div>{{ row['reps'] }}</div>
+                                <div>{{ row['rest'] }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="btn-group">
+                        <form action="/program_delete" method="post">
+                            <input type="hidden" name="program" value="{{ program['name'] }}">
+                            <button>Elimina</button>
+                        </form>
+                        <form action="/program_update" method="get">
+                            <input type="hidden" name="program" value="{{ program['name'] }}">
+                            <button>Modifica</button>
+                        </form>
+                    </div>
+                </section>
+            {% endfor %}
+
+        {% else %}
+            <button style="margin-top: 50vh"><a href="/scheda">Crea nuova scheda</a></button>
+        {% endif %}
+    </div>
+
+{% endblock %}

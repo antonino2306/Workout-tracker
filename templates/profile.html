@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profilo
+{% endblock %}
+
+{% block name %}
+    Profile
+{% endblock %}
+
+{% block main %}
+    <header class="mobile-view">
+        <h1>Profile</h1>
+        <!-- <button><a href="/logout">Logout</a></button> -->
+    </header>
+    <div class="container">
+        <div class="table two">
+            <div>Username</div>
+            <div>{{ info[0]['username'] }}</div>
+            
+            <div>Età</div>
+            <div>{{ info[0]['age'] }}</div>
+            
+            <div>Altezza</div>
+            <div>{{ info[0]['height'] }} cm</div>
+            
+            <div>Peso</div>
+            <div>{{ info[0]['weight'] }} kg</div>   
+        </div>
+        <a href="/info_update"><button>Aggiorna info</button></a>
+    </div>
+
+    <div class="container">
+        <h2>Cambia password</h2>
+        <form action="/change_password" method="post">
+            <div>
+                <label for="password">New password</label>
+                <input type="text" name="new_password" autocomplete="off">
+            </div>
+            <div>
+                <label for="confirmation">Confirm password</label>
+                <input type="text" name="confirmation" autocomplete="off">
+            </div>
+            <div>
+                <button type="submit">Salva</button>
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}

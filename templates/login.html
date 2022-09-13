@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block main %}
+
+    
+    
+    <div class="container">
+        <h1>Login</h1>
+        <form action="/login" method="post">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" autocomplete="off" name="username">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="text" name="password" autocomplete="off">
+            </div>
+            <div>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+        <h4>
+            Non hai ancora un account? <a href="/register">Registrati</a>
+        </h4>
+    </div>
+    
+
+    
+
+
+{% endblock %}

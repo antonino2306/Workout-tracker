@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Update Program
+{% endblock %}
+
+{% block name %}
+    {{ program_name }}
+{% endblock %}
+
+
+{% block main %}
+
+    <h1 class="mobile-view">{{ program_name }}</h1>
+
+    <div class="container">
+        <div class="table five">
+            <div>Esercizio</div>
+            <div>Sets</div>
+            <div>Reps</div>
+            <div>Rest</div>
+            <div></div>
+            {% for exercise in scheda %}
+                {% set i = 0 %}
+                    <div>{{ exercise['name'] }}</div>
+                    <div>{{ exercise['sets'] }}</div>
+                    <div>{{ exercise['reps'] }}</div>
+                    <div>{{ exercise['rest'] }}</div>
+                    <div>
+                        <form action="/delete_ex" method="post">
+                            <input type="hidden" name="counter" value="{{ i }}">
+                            <input type="hidden" name="exercise-{{i}}" value="{{ exercise['name'] }}">
+                            <input type="hidden" name="program" value="{{ program_name }}">
+                            <button type="submit">-</button>
+                        </form>
+                    </div>
+                {% set i = i + 1 %}
+            {% endfor %}
+        </div>
+        <form action="/add_ex" method="get">
+            <input type="hidden" name="program" value="{{ program_name }}">
+            <button type="submit">Add exercise</button>
+        </form>
+            
+        
+    </div>
+
+
+{% endblock %}

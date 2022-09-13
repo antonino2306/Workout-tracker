@@ -1,0 +1,388 @@
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #00111C;
+        --text-color: #fffaffff;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: #fffaffff;
+        --text-color: #00111C;
+    }
+}
+
+.fa-solid {
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+a:hover {
+    border-bottom: 2px solid #00406cff;
+    color: var(--text-color);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    padding: 0 2vw;
+}
+
+nav.page-bottom {
+    display: none;
+}
+
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    color: #ffffff;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+nav.page-top li {
+    margin: 0 2vw;
+    font-size: 1.3em;
+}
+
+.page-top form input,
+.page-top form button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.3rem;
+}
+
+.page-top form input {
+    border-bottom: 2px solid #00406cff;
+    padding-bottom: 2px;
+    color: var(--text-color);
+}
+
+.page-top form button {
+    color: #00406cff;
+}
+
+
+
+div.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 4vh;
+}
+
+
+h1 {
+    font-size: 2.2em;
+    text-align: center;
+}
+/* Form layout */
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
+form div {
+    margin: 1vh 0 3.2vh 0;
+    padding-bottom: 2vh;
+}
+
+form label {
+    display: block;
+}
+
+form input {
+    width: 50vw;
+    height: 4vh;
+    border: none;
+    padding-bottom: 0.2em;
+    border-bottom: 2px solid var(--text-color);
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+form input:focus-visible {
+    outline: none;
+    border-bottom: 5px solid #003356;
+}
+
+button {
+    font-size: 1.2em;
+    padding: 0.2em 0.7em;
+    background-color: #003356;
+    color: white;
+    border: none;
+    border-radius: 0.3em;
+}
+
+form[name=scheda] {
+    /* height: 80vh; */
+    position: relative;
+    margin-bottom: 2vh;
+}
+
+.form {
+    position: relative;
+}
+
+input[name = name] {
+    margin-bottom: 3vh;
+}
+
+button[type=submit] {
+    font-size: 1.7em;
+    margin: 0;
+}
+
+form[name=scheda] button[type=submit] {
+    position: absolute;
+    bottom: 0;
+}
+
+button.add-exercise {
+    position: absolute;
+    bottom: 0;
+    right: 2vw;
+}
+
+
+/* index page */
+
+section.scheda {
+    margin: 5vh 0;
+    width: 50%;
+}
+
+section.scheda div.table.four {
+    width: 100%;
+}
+
+section.scheda form {
+    margin: 0;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2vh;
+}
+
+
+/* profile page */
+
+.mobile-view {
+    display: none;
+}
+
+
+/* grid layout */
+
+div.table {
+    display: grid;
+    align-items: end;
+    --bs-table-color: var(--text-color);
+    text-transform: capitalize;
+}
+
+.table>:not(caption)>*>* {
+    padding: 0.2em 0.7em;
+    background-color: #003356;
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}
+
+div.table.two {
+    grid-template-columns: auto auto;
+    row-gap: 1.5em;
+    padding: 0.5em 0;
+    font-size: 1.3em;
+    text-align: center;
+    width: 50%;
+    margin: 4vh auto auto auto;
+}
+
+div.table.three {
+    grid-template-columns: auto auto auto;
+    column-gap: 0.3em;
+}
+
+.exercise-input {
+    width: 100%;
+}
+
+div.exercise-box > div.table.three input {
+    width: calc(100vw / 4);
+}
+
+div.table.four {
+    grid-template-columns: auto auto auto auto;
+    column-gap: 0.3em;
+}
+
+div.table.five {
+    grid-template-columns: auto auto auto auto auto;
+    column-gap: 0.3em;
+}
+
+div.table div {
+    border-bottom: 4px solid #003356;
+    padding: 0.5em;
+}
+
+/* Accordions */
+div.exercise-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10% 0;
+}
+
+.accordion {
+    width: 90%;
+    --bs-accordion-bg: #00345652;
+    --bs-accordion-color: var(--text-color)
+}
+
+.accordion-button {
+    color: var(--text-color);
+}
+
+ol li {
+    text-transform: capitalize;
+}
+
+
+
+@media only screen and (max-width: 450px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    main {
+        /* because navbar is 5vh */
+        height: 95vh; 
+        overflow-y: scroll;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 10% 0 5% 0;
+    }
+
+    h4 {
+        text-align: center;
+        margin-top: 2vh;
+    }
+
+    h4 a {
+        border-bottom: 2px solid #003356;
+    }
+
+    .desktop-view {
+        display: none;
+    }
+
+    nav.page-bottom {
+        display: block;
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+        height: 5vh;
+        background-color: #003356;
+    }
+
+    div.container {
+        width: 100%;
+    }
+
+    form {
+        margin-top: 20%;
+    }
+
+    section.scheda {
+        width: 90%;
+        
+    }
+
+    section.scheda h2 {
+        margin-bottom: 0.5em;
+    }
+
+
+    div.table.two {
+        width: 95%;
+    }
+
+    div.table div {
+        border-bottom: 2px solid #003356;
+        padding: 0.5em;
+    }
+
+    div.table button[type=submit] {
+        font-size: inherit;
+    }
+
+    form input {
+        width: 80vw;
+    }
+
+    .user-info {
+        margin: 2vh 0 2vh 5vw;
+    }
+
+    .user-info h3 {
+        margin-bottom: 1vh;
+        font-size: 1.5em;
+    }
+
+    .user-info p 
+    {
+        font-size: 1.2em;
+        padding-bottom: 0.2em;
+        border-bottom: 2px solid #003356;
+        width: 50vw;
+    }
+
+    /* profile page */
+    .mobile-view {
+        display: block;
+    }
+
+    form[action="/change_password"] {
+        margin-top: 10%;
+    }
+
+}
+
+
